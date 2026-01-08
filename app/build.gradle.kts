@@ -93,12 +93,17 @@ dependencies {
     // implementation("androidx.room:room-paging:$roomVersion")
 
     // --- Networking (Retrofit + OkHttp) ---
-    implementation("com.squareup.retrofit2:retrofit:3.0.0")
-    implementation("com.squareup.retrofit2:converter-moshi:3.0.0")
+    // Retrofit 3 (BOM para alinear versiones)
+    implementation(platform("com.squareup.retrofit2:retrofit-bom:3.0.0"))
+    implementation("com.squareup.retrofit2:retrofit")
+    implementation("com.squareup.retrofit2:converter-moshi")
 
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:5.3.2"))
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.okhttp3:logging-interceptor")
+    // OkHttp soportado por Retrofit 3.0.0 (4.12.x)
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    // Moshi (converter-moshi tira de Moshi; moshi-kotlin recomendado para data classes Kotlin)
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
 
     // --- Coroutines ---
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")

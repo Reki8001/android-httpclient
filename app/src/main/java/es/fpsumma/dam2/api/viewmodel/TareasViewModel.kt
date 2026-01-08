@@ -22,8 +22,8 @@ class TareasViewModel(app: Application) : AndroidViewModel(app) {
 
     private val dao = db.tareaDao()
 
-    val tareas: StateFlow<List<TareaEntity>> =
-        dao.getAllTareas().stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
+    //val tareas: StateFlow<List<TareaEntity>> =
+    //    dao.getAllTareas().stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
     fun getTarea(id: Int): StateFlow<TareaEntity?> =
         dao.getTarea(id).stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
@@ -38,6 +38,7 @@ class TareasViewModel(app: Application) : AndroidViewModel(app) {
 
     fun deleteTareaById(id: Int) = viewModelScope.launch { dao.deleteById(id) }
 
+    //Para el state -> Revisar
     val state: StateFlow<TareasUIState> =
         dao.getAllTareas()
             .map { lista ->

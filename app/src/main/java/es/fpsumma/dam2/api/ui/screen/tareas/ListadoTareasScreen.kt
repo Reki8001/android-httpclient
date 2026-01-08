@@ -41,7 +41,7 @@ fun ListadoTareasScreen(
     modifier: Modifier = Modifier
 ) {
 
-    val tareas by vm.tareas.collectAsState()
+    val tareas by vm.state.collectAsState()
 
     fun handleDeleteTarea(id: Int) {
         vm.deleteTareaById(id)

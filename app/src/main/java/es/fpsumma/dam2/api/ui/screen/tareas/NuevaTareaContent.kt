@@ -6,12 +6,10 @@ import androidx.compose.ui.Modifier
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ListadoTareasContent(
+fun NuevaTareaContent(
     state: TareasUIState,
     onBack: () -> Unit,
-    onAdd: () -> Unit,
-    onOpenDetalle: (Int) -> Unit,
-    onDelete: (Int) -> Unit,
+    onSave: (String, String) -> Unit,
     modifier: Modifier
 ) {
 

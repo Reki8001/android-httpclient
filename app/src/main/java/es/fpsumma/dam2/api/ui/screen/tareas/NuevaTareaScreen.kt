@@ -32,7 +32,7 @@ import es.fpsumma.dam2.api.ui.navegation.Routes
 import es.fpsumma.dam2.api.viewmodel.TareasViewModel
 
 
-@OptIn(ExperimentalMaterial3Api::class)
+/*@OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun NuevaTareaScreen(
@@ -93,4 +93,4 @@ fun NuevaTareaScreen(
 
         }
     }
-}
+}*/

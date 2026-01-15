@@ -55,7 +55,7 @@ fun DetalleTareaContent(
             TopAppBar(
                 title = { Text("Listado de tareas") },
                 navigationIcon = {
-                    IconButton(onClick = {onBack}) {
+                    IconButton(onClick = {onBack()}) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Volver")
                     }
                 }

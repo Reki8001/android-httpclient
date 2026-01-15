@@ -19,6 +19,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
@@ -28,9 +32,12 @@ import androidx.compose.ui.unit.dp
 fun NuevaTareaContent(
     state: TareasUIState,
     onBack: () -> Unit,
-    onSave: (String, String) -> Unit,
+    onSave: (titulo: String, descripcion: String) -> Unit,
     modifier: Modifier
 ) {
+    var titulo by rememberSaveable { mutableStateOf("") }
+    var descripcion by rememberSaveable { mutableStateOf("") }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -67,7 +74,7 @@ fun NuevaTareaContent(
             )
             Spacer(modifier.height(8.dp))
             Button(
-                onClick = onSave as () -> Unit,
+                onClick = { onSave(titulo, descripcion) },
                 modifier = modifier.fillMaxWidth()
             ) { Text("Añadir nota") }
 

@@ -17,7 +17,7 @@ fun ListadoTareasRoomRoute(
     vm: TareasViewModel,
     modifier: Modifier = Modifier,
 ) {
-    val state by vm.state.collectAsState()
+    val state by vm.state.collectAsState() //<- Porque solo se usa en listar? Que hace esto?
 
     ListadoTareasContent(
         state = state, // si x= algo falla es porque debe pasarse como x=x como en el examen vm=vm
